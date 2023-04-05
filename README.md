@@ -1,11 +1,17 @@
 # ACTL4001 Assignment - 2023 SOA Research Challenge
 
+### University of New South Wales
+
+### Group 1
+
+### Team Members: Emily Zhou, Emily Khou, Emily Tan, Marcus Lautier, Ivana Tambun
+
 ![image](https://user-images.githubusercontent.com/113440610/229755925-c567265f-9d0b-4fc0-908f-5311ab7433b9.png)
 
 
 
 ----------------------------------------------
-## **Executive Summary**
+## **Executive Summary** 📙
 
 The actuarial team at MAIVE Consulting have been tasked with designing a social insurance program for relocation. With the threat of climate change becoming apparent around the globe, Storslysia, who are no exception to the reality of climate-related catastrophes, would like our firm to help manage its exposure to displacement risk due to catastrophice weather events. 
 
@@ -15,7 +21,7 @@ The team has outlined three core principles that its program should adhere to. S
 * Will vary based on the risk inherent to each household at a region level.
 
 
-## **Program Description** 
+## **Program Description** 📝
 MAIVE Consulting recommends that a citizen of Storslysia will be eligible to file a claim under the scheme by default. The citizen can then elect either a proactive or reactive cover.
 
 Each cover will provide a catastrophic relief payment, as well as the following extras: transport fees; coverage for tools of trade, not including home office equipment; provision of temporary accommodation; two Ꝕ50 vouchers per adult – redeemable at select businesses, including but not limited to restaurants, furniture storage, furniture removal; and a free subscription to a mental health program (valued Ꝕ1000 per person). 
@@ -38,6 +44,7 @@ This script also includes sensitivity analysis performed, and summary statistics
 ## **Results** 😎
 The total costs of our program from 2020 - 2100 in the worst case scenario is shown below. From our analysis, our proposed program costs will not exceed 10% of GDP.
 
+<p align="center">
 <img width="432" alt="Screen Shot 2023-04-05 at 10 58 26 am" src="https://user-images.githubusercontent.com/113522147/229954592-73bcc59f-8e11-44d7-b64b-2f4859234875.png">
 
 
@@ -47,7 +54,7 @@ With Program                   | Without Program
 :-----------------------------:|:-----------------------------:
 ![image](https://user-images.githubusercontent.com/113440610/229763855-fbf4e5ae-9f82-4626-9acd-d33850ac57f6.png)|![image](https://user-images.githubusercontent.com/113440610/229764395-98ef8259-a2e3-456e-8b3b-5b7e7af95167.png)
 
-## **Assumptions**
+## **Assumptions** 🤔
 
 ### ***Categorisation of 'Catastrophic' Weather Events***
 No existing definition of 'catastrophic' was provided. Accordingly, it was assumed using real world data that, on average, a natural disaster that causes over 5 deaths and/or 16 fatalities is 'catastrophic'.
@@ -74,8 +81,9 @@ The investment returns on the remainder of the capital have been assumed to be i
 The baseline inputs used for the model involved a 5% interest rate to discount the future claims cost to 2020 and a 3% inflation rate to inflate the cost. These assumptions were performed using data and projections from the SSP5 Scenario as this is the most extreme case that would overestimate costs.
 
 
-## **Risk and Risk Mitigation Strategies**
+## **Risk and Risk Mitigation Strategies** ⚠️
 ### ***Risks***
+<p align="center">
 <img width="442" alt="Screen Shot 2023-04-05 at 11 36 31 am" src="https://user-images.githubusercontent.com/113522147/229958810-2451ccc0-902d-49dd-9cf0-324f1bae9348.png">
 
 ### ***Sensitivity Analysis***
@@ -101,7 +109,7 @@ this forecast to inform how much funding we require to avoid ruin.
 * Manage moral hazard (Risk 10) by ensuring out eligibility criteria is up to date, and screening claimants carefully to ensure they receive a justified amount.
 
 
-## **Data Limitations**
+## **Data Limitations** 🚫
 
 * Historical loss data contains 51 unique combinations of natural perils. Such an extensive list with little loss data impacts accuracy. Thus, perils were grouped to aggregate data. As a result, compound climate events are not explicitly accounted for.
 * As there is no explicit data surrounding the exposure to catastrophic events, assumptions have been made to attempt to match the number of households exposed to certain risks.
