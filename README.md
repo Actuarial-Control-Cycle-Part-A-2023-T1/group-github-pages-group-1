@@ -9,19 +9,22 @@
 
 The actuarial team at MAIVE Consulting have been tasked with designing a social insurance program for relocation. With the threat of climate change becoming apparent around the globe, Storslysia, who are no exception to the reality of climate-related catastrophes, would like our firm to help manage its exposure to displacement risk due to catastrophice weather events. 
 
-The team has outlined three core principles that its proposition should adhere to. In turn, they are that the benefit payable:
+The team has outlined three core principles that its program should adhere to. Specifically, that the benefit payable:
 * Should be strictly greater for proactive relocation than for reactive relocation, to ensure incentivisation of the former. 
 * Will scale based on the wealth of each household, in the social interests of Storslysia's society.
 * Will vary based on the risk inherent to each household at a region level.
 
 
-## ***Program Description*** 🚀
-MAIVE Consulting recommends that the program offers a catastrophic relief payment, carefully discerning who is eligible to claim and how much each claimant can receive in alignment with the above principles. 
+## **Program Description** 
+MAIVE Consulting recommends that a citizen of Storslysia will be eligible to file a claim under the scheme by default. The citizen can then elect either a proactive or reactive cover.
 
-This program aims to support residents when relocating to a new area. The program will offer: 
-* Financial support to cover logistical costs :dollar:
-* Help manage psychological impacts 🌝
-* Cover losses faced because of a catastrophic event of potential catastrophic event :stars:
+Each cover will provide a catastrophic relief payment, as well as the following extras: transport fees; coverage for tools of trade, not including home office equipment; provision of temporary accommodation; two Ꝕ50 vouchers per adult – redeemable at select businesses, including but not limited to restaurants, furniture storage, furniture removal; and a free subscription to a mental health program (valued Ꝕ1000 per person). 
+
+A key aim behind this program is to offer adequate support to residents relocating to a new area - whether that be financial support, or help managing after-effects of a natural disaster, for example, psychological impacts. 
+
+The catastrophic relief payment, unlike the above extras, vary between the proactive and reactive covers.
+
+In accordance with the control cycle, this program will be monitored monthly over the short-term period of the first year. This frequency will ensure that, as the program is introduced into practice, any initial inefficiencies can immediately be adjusted to improve program performance. The regularity of monitoring will then shift to a quarterly review over the next 2 years, before transitioning to biannually over the following 5 years, and finally annually thereafter for a period of 20 years. 
 
 --------------------------------------------
 
