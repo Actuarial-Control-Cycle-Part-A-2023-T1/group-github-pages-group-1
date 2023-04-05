@@ -2,7 +2,11 @@
 
 ![image](https://user-images.githubusercontent.com/113440610/229755925-c567265f-9d0b-4fc0-908f-5311ab7433b9.png)
 
+### University of New South Wales
 
+### Group 1
+
+### Team Members: Emily Zhou, Emily Khou, Emily Tan, Marcus Lautier, Ivana Tambun
 
 ----------------------------------------------
 ## **Executive Summary**
@@ -38,6 +42,7 @@ This script also includes sensitivity analysis performed, and summary statistics
 ## **Results** 😎
 The total costs of our program from 2020 - 2100 in the worst case scenario is shown below. From our analysis, our proposed program costs will not exceed 10% of GDP.
 
+<p align = "center">
 <img width="432" alt="Screen Shot 2023-04-05 at 10 58 26 am" src="https://user-images.githubusercontent.com/113522147/229954592-73bcc59f-8e11-44d7-b64b-2f4859234875.png">
 
 
@@ -76,6 +81,8 @@ The baseline inputs used for the model involved a 5% interest rate to discount t
 
 ## **Risk and Risk Mitigation Strategies**
 ### ***Risks***
+
+  <p align = "center">
 <img width="442" alt="Screen Shot 2023-04-05 at 11 36 31 am" src="https://user-images.githubusercontent.com/113522147/229958810-2451ccc0-902d-49dd-9cf0-324f1bae9348.png">
 
 ### ***Sensitivity Analysis***
