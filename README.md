@@ -93,5 +93,27 @@ this forecast to inform how much funding we require to avoid ruin.
 * Manage unexpected resident preference by keeping up to date with local culture and adjust incentives for proactive relocation accordingly.
 * Manage moral hazard (Risk 10) by ensuring out eligibility criteria is up to date, and screening claimants carefully to ensure they receive a justified amount.
 
+
+## **Data Limitations**
+
+* Historical loss data contains 51 unique combinations of natural perils. Such an extensive list with little loss data impacts accuracy. Thus, perils were grouped to aggregate data. As a result, compound climate events are not explicitly accounted for.
+* As there is no explicit data surrounding the exposure to catastrophic events, assumptions have been made to attempt to match the number of households exposed to certain risks.
+* Geographical and topological characteristics of the regions was limited, which rendered it impossible to model the climate risk at a granular level. As a consequence, the distribution of peril sizes was fit at the country level, which presents a cross-subsidy risk as pricing is at the region/risk level. 
+* The initial scheme design required a citizen to live in a ‘high risk’ region, or that an individual must have resided in an affected area for a minimum of 1 year (in the case of proactive relocation) or more than 2 weeks (in the case of reactive relocation). However, limited data resulted in difficulties to define this. Hence, automatic eligibility was chosen as a more feasible option. 
+* There were also initial plan for a citizen to receive reactive relocation support included an eligibility requirement. For example, if the legal title holder is less than 67 years old, that citizen would be eligible provided that the damage to their property exceeded a certain amount. That amount would be lower for those older than 67. However, as data was not available, the differentiation of coverage between age groups was not carried out.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ![giphy](https://user-images.githubusercontent.com/113440610/229765593-73ada8b7-5573-423a-9239-31cf87defbf3.gif)
 
