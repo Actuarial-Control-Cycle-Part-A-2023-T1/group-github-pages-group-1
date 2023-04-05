@@ -89,14 +89,14 @@ Sensitivity analysis was also performed on the frequency of catastrophic events.
 #### *Financial*
 * Perform a valuation each year to ensure that costs associated with the adjusted benefits and the risk of a proactive or reactive relocation do not exceed 10% of Storslysia’s GDP and that there is adequate reserves to cover these payouts. At each valuation, adjust assumptions in the calculation of our costs to any economic or policy changes.
 
-### *Operational*
+#### *Operational*
 * Monitor the adequacy of benefits such as changing circumstances e.g. worsening climate change or unexpected population increases, and adjust benefits accordingly.
 * Manage land available (Risk 4) for relocation by partnering with city planners.
 * Forecast future extreme weather occurrences at different risk-levelled scenarios. Use
 this forecast to inform how much funding we require to avoid ruin.
 * Manage tax risk by keeping up to date with tax laws and adjusting benefits.
 
-### *Strategic*
+#### *Strategic*
 * Manage unexpected resident preference by keeping up to date with local culture and adjust incentives for proactive relocation accordingly.
 * Manage moral hazard (Risk 10) by ensuring out eligibility criteria is up to date, and screening claimants carefully to ensure they receive a justified amount.
 
