@@ -77,7 +77,21 @@ The baseline inputs used for the model involved a 5% interest rate to discount t
 ## **Risk and Risk Mitigation Strategies**
 <img width="442" alt="Screen Shot 2023-04-05 at 11 36 31 am" src="https://user-images.githubusercontent.com/113522147/229958810-2451ccc0-902d-49dd-9cf0-324f1bae9348.png">
 
-The following strategies have been identified to mitigate these risks:
+The following strategies have been identified to mitigate these risks.
+
+### ***Financial***
+* Perform a valuation each year to ensure that costs associated with the adjusted benefits and the risk of a proactive or reactive relocation do not exceed 10% of Storslysia’s GDP and that there is adequate reserves to cover these payouts. At each valuation, adjust assumptions in the calculation of our costs to any economic or policy changes.
+
+### ***Operational***
+* Monitor the adequacy of benefits such as changing circumstances e.g. worsening climate change or unexpected population increases, and adjust benefits accordingly.
+* Manage land available (Risk 4) for relocation by partnering with city planners.
+* Forecast future extreme weather occurrences at different risk-levelled scenarios. Use
+this forecast to inform how much funding we require to avoid ruin.
+* Manage tax risk by keeping up to date with tax laws and adjusting benefits.
+
+### ***Strategic***
+* Manage unexpected resident preference by keeping up to date with local culture and adjust incentives for proactive relocation accordingly.
+* Manage moral hazard (Risk 10) by ensuring out eligibility criteria is up to date, and screening claimants carefully to ensure they receive a justified amount.
 
 ![giphy](https://user-images.githubusercontent.com/113440610/229765593-73ada8b7-5573-423a-9239-31cf87defbf3.gif)
 
