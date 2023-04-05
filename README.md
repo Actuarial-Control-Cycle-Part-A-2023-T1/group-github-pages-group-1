@@ -24,7 +24,7 @@ A key aim behind this program is to offer adequate support to residents relocati
 
 The catastrophic relief payment, unlike the above extras, vary between the proactive and reactive covers.
 
-In accordance with the control cycle, this program will be monitored monthly over the short-term period of the first year. This frequency will ensure that, as the program is introduced into practice, any initial inefficiencies can immediately be adjusted to improve program performance. The regularity of monitoring will then shift to a quarterly review over the next 2 years, before transitioning to biannually over the following 5 years, and finally annually thereafter for a period of 20 years. 
+In accordance with the control cycle, this program will be monitored via MAIVE Consulting monthly over the short-term period of the first year. This frequency will ensure that, as the program is introduced into practice, any initial inefficiencies can immediately be adjusted to improve program performance. The regularity of monitoring will then shift to a quarterly review over the next 2 years, before transitioning to biannually over the following 5 years, and finally annually thereafter for a period of 20 years. 
 
 --------------------------------------------
 
