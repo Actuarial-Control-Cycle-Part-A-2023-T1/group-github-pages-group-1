@@ -22,14 +22,14 @@ This program aims to support residents when relocating to a new area. The progra
 --------------------------------------------
 
 ### ***Pricing*** 😮
-We forecasted Storslysia's GDP and population and built our proposed program to identify costs associated utilising our [R Script](https://github.com/emilyzhou123/ACTL4001_/blob/main/ACTL4001%20Master%20Script.R).
+We forecasted Storslysia's GDP and population and built our proposed program to identify costs associated utilising our [R Script](https://github.com/Actuarial-Control-Cycle-Part-A-2023-T1/group-github-pages-group-1/blob/main/R%20Script).
 
 This script also includes sensitivity analysis performed, and summary statistics to ensure the proposed program costs do not exceed 10% of Storslysia's GDP. 
 
 -----------------------------------------------
 
 ### ***Results*** 😎
-The total costs of our program from 2020 - 2100 in the worst case scenario is shown brlow. From our analysis, our proposed program costs will not exceed 10% of GDP.
+The total costs of our program from 2020 - 2100 in the worst case scenario is shown below. From our analysis, our proposed program costs will not exceed 10% of GDP.
 | Year     |	Mean	           | GDP           |% of GDP|
 |----------|-----------------|---------------|--------|
 |2020	     |Ꝕ124 billion    |Ꝕ1.3 trillion  | 9.57%  | 
