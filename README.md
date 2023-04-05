@@ -41,7 +41,7 @@ The total costs of our program from 2020 - 2100 in the worst case scenario is sh
 <img width="432" alt="Screen Shot 2023-04-05 at 10 58 26 am" src="https://user-images.githubusercontent.com/113522147/229954592-73bcc59f-8e11-44d7-b64b-2f4859234875.png">
 
 
-Comparing the economic costs with and without our program, we notice that with our program there is reduction in economic costs in the future as well as a decrese in variance. 
+Comparing the economic costs with and without our program, we notice that with our program there is reduction in economic costs in the future as well as a decrease in variance. 
 
 With Program                   | Without Program
 :-----------------------------:|:-----------------------------:
@@ -75,21 +75,28 @@ The baseline inputs used for the model involved a 5% interest rate to discount t
 
 
 ## **Risk and Risk Mitigation Strategies**
+### ***Risks***
 <img width="442" alt="Screen Shot 2023-04-05 at 11 36 31 am" src="https://user-images.githubusercontent.com/113522147/229958810-2451ccc0-902d-49dd-9cf0-324f1bae9348.png">
 
-The following strategies have been identified to mitigate these risks.
+### ***Sensitivity Analysis***
+Sensitivity analysis was performed across the four SSP Scenarios using the base model assumptions. The most favourable situation would be under SSP1 as there is low challenges to mitigation and adaptation, meaning that there is constant improvement to the overall economy. In this scenario, the nominal claims costs decrease, on average, by 1% each year, with a decreasing proportion of Storslysia’s GDP being used. On the other hand, under the most unfavourable situation being SSP5, with high challenges to mitigation and low challenges to adaptation, the nominal claims cost is increasing, on average, by 9% each year. However, it was found that even in the most unfavourable situation, the cost to Storslysia’s GDP is well below 10% in 2020, and continues to decrease. Accordingly, further scenario testing was conducted under the most unfavourable scenario, SSP5, to ensure that claims cost does not exceed 10% of Storslysia’s GDP. 
 
-### ***Financial***
+For example, stress testing was performed on the inflation rate and shows that an increase in inflation leads to an increase in claims cost. A 4% increase in inflation to the baseline increases the claims costs by, on average, 0.235% in present value terms. This demonstrates that even at the extremity of 7% inflation, the program does not lead to ruin. Additionally, given this analysis has been performed under the most unfavourable baseline scenario SSP5, under all other more favourable scenarios, the program will not lead to ruin.
+
+Sensitivity analysis was also performed on the frequency of catastrophic events. The favourable situation of half the number of events reduces the claims cost by, on average 19%, whereas the unfavourable situation with a factor of 4x increases the claims cost by, on average 113%. This demonstrates that under this extremity, the program does lead to ruin in the decade commenced 2020 – highlighting the need for ongoing monitoring of the frequency assumptions relative to actual experience is required to ensure sufficient capital is injected into the scheme. It should be noted the 4x frequency multiplier is well covered by GDP growth as the scheme continues into the future.
+
+### ***Risk Mitigation Strategies***
+### *Financial*
 * Perform a valuation each year to ensure that costs associated with the adjusted benefits and the risk of a proactive or reactive relocation do not exceed 10% of Storslysia’s GDP and that there is adequate reserves to cover these payouts. At each valuation, adjust assumptions in the calculation of our costs to any economic or policy changes.
 
-### ***Operational***
+### *Operational*
 * Monitor the adequacy of benefits such as changing circumstances e.g. worsening climate change or unexpected population increases, and adjust benefits accordingly.
 * Manage land available (Risk 4) for relocation by partnering with city planners.
 * Forecast future extreme weather occurrences at different risk-levelled scenarios. Use
 this forecast to inform how much funding we require to avoid ruin.
 * Manage tax risk by keeping up to date with tax laws and adjusting benefits.
 
-### ***Strategic***
+### *Strategic*
 * Manage unexpected resident preference by keeping up to date with local culture and adjust incentives for proactive relocation accordingly.
 * Manage moral hazard (Risk 10) by ensuring out eligibility criteria is up to date, and screening claimants carefully to ensure they receive a justified amount.
 
