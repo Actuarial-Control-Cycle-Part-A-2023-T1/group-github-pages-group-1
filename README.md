@@ -1,14 +1,14 @@
 # ACTL4001 Assignment - 2023 SOA Research Challenge
 
+
+![image](https://user-images.githubusercontent.com/113440610/229755925-c567265f-9d0b-4fc0-908f-5311ab7433b9.png)
+
+
 ### University of New South Wales
 
 ### Group 1
 
 ### Team Members: Emily Zhou, Emily Khou, Emily Tan, Marcus Lautier, Ivana Tambun
-
-![image](https://user-images.githubusercontent.com/113440610/229755925-c567265f-9d0b-4fc0-908f-5311ab7433b9.png)
-
-
 
 ----------------------------------------------
 ## **Executive Summary** 📙
