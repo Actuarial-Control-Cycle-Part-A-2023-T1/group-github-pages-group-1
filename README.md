@@ -6,12 +6,12 @@ The actuarial team at MAIVE Consulting have been tasked with designing a social 
 
 ----------------------------------------------
 
-### ***Benefit Payable Principles*** :sunny:
+### ***Benefit Payable Principles*** ☀️
 * Should be strictly greater for proactive relocation than for reactive relocation, to ensure incentivisation of the former. 
 * Will scale based on the wealth of each household, in the social interests of Storslysia's society.
 * Will vary based on the risk inherent to each household at a region level.
 
-### ***Program Description*** :rocket:
+### ***Program Description*** 🚀
 MAIVE Consulting recommends that the program offers a catastrophic relief payment, carefully discerning who is eligible to claim and how much each claimant can receive in alignment with the above principles. 
 
 This program aims to support residents when relocating to a new area. The program will offer: 
@@ -30,17 +30,8 @@ This script also includes sensitivity analysis performed, and summary statistics
 
 ### ***Results*** 😎
 The total costs of our program from 2020 - 2100 in the worst case scenario is shown below. From our analysis, our proposed program costs will not exceed 10% of GDP.
-| Year     |	Mean	           | GDP           |% of GDP|
-|----------|-----------------|---------------|--------|
-|2020	     |Ꝕ124 billion    |Ꝕ1.3 trillion  | 9.57%  | 
-|2030	     |Ꝕ131 billion    |Ꝕ2.1 trillion  | 6.22%  |
-|2040	     |Ꝕ144 billion    |Ꝕ3.3 trillion  | 4.33%  |
-|2050	     |Ꝕ155 billion    |Ꝕ4.6 trillion  | 3.34%  |
-|2060	     |Ꝕ170 billion    |Ꝕ6.1 trillion  | 2.79%  |
-|2070	     |Ꝕ186 billion    |Ꝕ7.7 trillion  | 2.42%  |
-|2080	     |Ꝕ206 billion    |Ꝕ9.4 trillion  | 2.18%  |
-|2090	     |Ꝕ230 billion    |Ꝕ11.2 trillion | 2.05%  |
-|2100	     |Ꝕ256 billion    |Ꝕ13.1 trillion | 1.95%  |
+<img width="432" alt="Screen Shot 2023-04-05 at 10 58 26 am" src="https://user-images.githubusercontent.com/113522147/229954592-73bcc59f-8e11-44d7-b64b-2f4859234875.png">
+
 
 Comparing the economic costs with and without our program, we notice that with our program there is reduction in economic costs in the future as well as a decrese in variance. 
 
