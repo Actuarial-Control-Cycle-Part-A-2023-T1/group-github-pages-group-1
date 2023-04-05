@@ -1,0 +1,389 @@
+###############################################################################
+#
+# ACTL4001 GROUP ASSIGNMENT                                                         
+# R Script                      
+# Marcus Lautier, Emily Tan, Emily Khou, Emily Zhou, Ivana Tambun (z5312651)   
+# Term 1, March 2023
+#
+# -----------------------------------------------------------------------------
+#
+# This R script contains all of the code for our group's ACTL4001 assignment. 
+# It is separated into three parts:
+#   1. Preliminaries (data/package imports)
+#   2. Task 1 Codes 
+#   3. Task 2 Codes
+#
+################################################################################
+# 1. Preliminaries
+################################################################################
+
+# Import Packages
+library(readxl)
+library(dplyr)
+library(fitdistrplus)
+
+# Import data
+census_loc = "C:/Users/marcu/OneDrive/Desktop/Uni/2023/ACTL4001/Assignment/Data/2023-student-research-eco-dem-data.xlsx"
+economic_loc = "C:/Users/marcu/OneDrive/Desktop/Uni/2023/ACTL4001/Assignment/Data/2023-student-research-eco-dem-data.xlsx"
+hazard_loc = "C:/Users/marcu/OneDrive/Desktop/Uni/2023/ACTL4001/Assignment/Data/2023-student-research-hazard-event-data.xlsx"
+emissions_loc = "C:/Users/marcu/OneDrive/Desktop/Uni/2023/ACTL4001/Assignment/Data/2023-student-research-emissions.xlsx"
+forecasts_loc = "c:/Users/marcu/OneDrive/Desktop/Uni/2023/ACTL4001/Assignment/Data/Forecasts.xlsx"
+propensities_loc = "c:/Users/marcu/OneDrive/Desktop/Uni/2023/ACTL4001/Assignment/Data/Methodology v2.xlsx"
+
+pd <- read_excel(
+  propensities_loc,
+  sheet = "PD",
+  range = "B2:M3368"
+)
+
+census <- read_excel(
+  census_loc, 
+  sheet = "Demographic-Economic", 
+  range = "B8:H51"
+)
+
+economic <- read_excel(
+  economic_loc, 
+  sheet = "Inflation-Interest", 
+  range = "B8:F68"
+)
+
+hazard <- read_excel(
+  hazard_loc, 
+  range = "B13:I3379"
+)
+
+emissions <- read_excel(
+  emissions_loc, 
+  sheet = "Model",
+  range = "B20:R34"
+)
+
+population <- read_excel(
+  emissions_loc,
+  sheet = "SSP Scenarios", 
+  range = "I15:L27"
+)
+population <- population[3:12,]
+rownames(population) <- seq(from = 2010, to = 2100, by = 10)
+
+gdp <- read_excel(
+  emissions_loc,
+  sheet = "SSP Scenarios", 
+  range = "N15:Q27"
+)
+gdp <- gdp[3:12,]
+rownames(gdp) <- seq(from = 2010, to = 2100, by = 10)
+
+#Import Emissions Events Data
+sc1_em <- emissions[,c(1,3:5)]
+sc2_em <- emissions[,c(1,7:9)]
+sc3_em <- emissions[,c(1,11:13)]
+sc4_em <- emissions[,c(1,15:17)]
+
+emissions_colnames <- c("Year", "Minor", "Medium", "Major")
+colnames(sc1_em) <- emissions_colnames
+colnames(sc2_em) <- emissions_colnames
+colnames(sc3_em) <- emissions_colnames
+colnames(sc4_em) <- emissions_colnames
+
+#Import Population Forecasts
+pop_forecast <- read_excel(
+  forecasts_loc,
+  sheet = "Forecast",
+  range = "G4:AK14"
+)
+sc1_pop <- pop_forecast[-1,1:7]
+sc2_pop <- pop_forecast[-1,0:15]
+sc3_pop <- pop_forecast[-1,17:23]
+sc4_pop <- pop_forecast[-1,25:31]
+
+colnames(sc1_pop) <- c("Year", 1, 2, 3, 4, 5, 6)
+colnames(sc2_pop) <- c("Year", 1, 2, 3, 4, 5, 6)
+colnames(sc3_pop) <- c("Year", 1, 2, 3, 4, 5, 6)
+colnames(sc4_pop) <- c("Year", 1, 2, 3, 4, 5, 6)
+
+# Import Displacement Propensities
+disp_prop <- read_excel(
+  propensities_loc, 
+  sheet = "Peril Distribution by Region",
+  range = "G4:M13",
+  col_names = c("Peril", 1, 2, 3, 4, 5, 6)
+)
+
+# Import property value distribution
+property_dist <- read_excel(
+  forecasts_loc,
+  sheet = "Property Values",
+  range = "C3:H15", 
+  col_names = c("1", 2, 3, 4, 5, 6)
+)
+
+# Import GDP forecasts:
+gdp_forecast <- read_excel(
+  forecasts_loc, 
+  sheet = "Forecast",
+  range = "M25:Q33",
+  col_names = c("Year", "Sc1", "Sc2", "Sc3", "Sc4")
+)
+gdp_forecast <- cbind(gdp_forecast[,1], gdp_forecast[,2:5]*1000)
+
+################################################################################
+# Curve Fitting
+################################################################################
+
+# Create dparams table
+params <- c("shape", "scale")
+dparams <- matrix(nrow = length(perils), ncol = length(params))
+rownames(dparams) <- perils
+colnames(dparams) <- params
+
+# Weibull Distribution Fit
+pd <- pd[, c("Mapped Event","PD Inflation Applied")]
+colnames(pd)[2] <- "Loss"
+pd <- pd[apply(pd!=0, 1, all),]
+pd$Loss <- as.numeric(pd$Loss / 1000)
+
+for (peril in perils){
+  peril_data <- pd[pd$`Mapped Event` == peril, "Loss"]
+  fitted_weibull <- fitdist(peril_data$Loss, "weibull", method = "mle")
+  
+  dparams[peril, 1] <- fitted_weibull$estimate[1]
+  dparams[peril, 2] <- fitted_weibull$estimate[2]
+}
+
+# Weibull Density
+weibull_density <- dweibull(seq(0, 200, 1), 
+                            shape = fitted_weibull$estimate["shape"], 
+                            scale = fitted_weibull$estimate["scale"])
+
+
+# GOF below
+
+# Computes ks, ad, cvm, chisq in that order
+test.gof <- function(data, dist_name, dist, fitted_dist_est) {
+  
+  v <- rep(0, 4)
+  est <- fitted_dist_est
+  
+  if (length(est) == 2) {
+    v[1] <- ks.test(data, dist_name, est[1], est[2])$p.value
+    v[2] <- ad.test(data, dist_name, est[1], est[2])$p.value
+    v[3] <- cvm.test(data, dist_name, est[1], est[2])$p.value
+    v[4] <- my.chisq.test(data, 10, length(est), dist, est)
+  } else {
+    v[1] <- ks.test(data, dist_name, est[1], est[2], est[3])$p.value
+    v[2] <- ad.test(data, dist_name, est[1], est[2], est[3])$p.value
+    v[3] <- cvm.test(data, dist_name, est[1], est[2], est[3])$p.value
+    v[4] <- my.chisq.test(data, 10, length(est), dist, est)
+  }
+  
+  return(v)
+}
+
+hyp_test <- rbind(
+  test.gof(loss$Loss, "pweibull", pweibull, fitted_weibull$estimate)
+)
+
+colnames(hyp_test) <- c("KS", "AD", "CVM", "CHISQ")
+rownames(hyp_test) <- c("Weibull")
+
+################################################################################
+# Macro Variables
+################################################################################
+regions <- seq(1, 6)
+years <- seq(from = 2020, to = 2100, by = 10)
+perils <- c("Severe Storm", "Flooding", "Winter Weather", 
+            "Hail", "Wind", "Lightning", "Tornado", 
+            "Drought", "Coastal", "Other")
+
+contents_loading <- seq(from = 0.75, to = 0.4, length.out = 13) + 1
+base_vals <- c(5, 10, 15, 15, 15, 15, 20, 20, 20, 20, 25, 25, 25) * 10000
+base_vals <- base_vals * contents_loading
+
+# (Transport cost + vouchers + mental health) * 2.5 + bills + temp accomodation
+lump_ben <- (3000 + 100 + 1000) * 2.5 + 0.15 * 15000 + 3 * 3000
+
+################################################################################
+# Functions to compute RLFs
+################################################################################
+
+# Samples a damage RV for a particular peril
+sample_reactive_dmg <- function(dparams, peril) {
+  d <- rweibull(1, dparams[peril, "shape"], dparams[peril, "scale"]) * 1000
+  
+  return(max(10000, d))
+}
+
+# Computes the probability of a catastrophic event
+compute_cat_prob <- function(scenario, year){
+  prob_all <- scenario %>% 
+    relocate(Year) %>% 
+    mutate(Prob = (Medium*0.5 + Major)/rowSums(scenario[,c(2:4)]))
+  
+  prob <- prob_all[prob_all$Year == year,] 
+  return(prob["Prob"])
+}
+
+# Computes the proportion of households exposed to risk
+pop_exposed <- function(pop_forecast, region, year){
+  pop_year <- pop_forecast[pop_forecast$Year == year, ]
+  pop <- pop_year[, region + 1]/2.5
+  return(pop)
+}
+
+# Computes the cost o reactive benefits payable to a single household in a given 
+# peril k event. 
+r_benefits <- function(dparams, peril, region, year, pop_forecast, a, p){
+  
+  # Normalise damage by the number of households since damage is at 
+  # the region level, assuming 5% of pop exposed to the given peril.
+  n_ij <- pop_exposed(pop_forecast, region, year)
+  dmg <- as.numeric(sample_reactive_dmg(dparams, peril)/0.05*n_ij)
+  surge_factor <- runif(1, 0, 0.5) + 1
+  dmg <- dmg * surge_factor
+  
+  benefit <- 0 
+  for (v in 1:length(a)){
+    benefit <- benefit + min(a[v], dmg) * p[v, region]
+  }
+  return (benefit + lump_ben * surge_factor)
+}
+
+# Pop_forecast must correspond to scenario sc[X]
+# r_costs(dparams, "Severe Storm", 1, 2030, sc4_em, sc4_pop, base_vals, property_dist, disp_prop)
+# Compute the expected 
+r_costs <- function(dparams, peril, region, year, scenario, pop_forecast, a, p, d){
+  
+  c_i <- as.numeric(sum(scenario[scenario$Year == year, 2:4]))
+  e_i <- as.numeric(compute_cat_prob(scenario, year))
+  n_ij <- pop_exposed(pop_forecast, region, year)
+  d_jk <- d[d$Peril == peril,][region + 1] #1st column is year variable
+  
+  cost <- rbinom(1, ceiling(c_i), e_i) * d_jk * n_ij * r_benefits(dparams, peril, region, year, pop_forecast, a, p)
+  return(cost)
+}
+
+# rlf(1, "Severe Storm", 1, 2030, sc4_em, sc4_pop, base_vals, property_dist, disp_prop, 0.05, 0.03)
+rlf <- function (years, dparams, peril, region, scenario, pop_forecast, a, p, d, v, u){
+  # v = interest rate
+  # u = inflation rate
+  
+  reactive <- 0
+  for (year in years){
+    
+    n_ij <- pop_exposed(pop_forecast, region, year)
+    cost <- r_costs(dparams, peril, region, year, scenario, pop_forecast, a, p, d)/n_ij
+    
+    reactive <- reactive + (cost*(1+v)^(-(year-2020))*(1+u)^(year-2020))
+    
+  }
+  return(as.numeric(reactive))
+}
+
+construct_risk_loading_factors <- function(years, perils, regions, 
+                                           dparams, scenario, pop_forecast, 
+                                           a, p, d, v, u) 
+{
+  
+  rlfs <- matrix(nrow = length(perils), ncol = length(regions))
+  rownames(rlfs) <- perils
+  colnames(rlfs) <- regions
+  
+  for (peril in 1:length(perils)) {
+    for (region in 1:length(regions)) {
+      
+      rlfs[peril, region] = as.numeric(rlf(years, dparams, perils[peril], 
+                                           regions[region], scenario, 
+                                           pop_forecast, a, p, d, v, u))
+      
+    }
+  }
+  
+  return(rlfs/100000 + 1)
+  
+}
+
+rlfs <- construct_risk_loading_factors(years, perils, regions,
+                                       dparams, sc4_em, sc4_pop, 
+                                       base_vals, property_dist, disp_prop, 0.05, 0.03)
+
+################################################################################
+# Functions to compute Proactive Costs
+################################################################################
+
+# Proactive benefit
+# p_costs(rlfs, 2020, "Severe Storm", 1, sc4_em, sc4_pop, base_vals, property_dist)
+p_costs <- function(rlfs, year, peril, region, scenario, pop_forecast, a, p) {
+  pro_ben <- 0
+  
+  for (v in 1:length(a)){
+    pro_ben <- pro_ben + (a[v]/100000 * rlfs[peril,region]) * p[v, region] + lump_ben
+  } 
+  
+  proactive = pop_exposed(pop_forecast, region, year)/2.5 * pro_ben
+  
+  return (as.numeric(proactive))
+}
+
+################################################################################
+# Functions to compute Total Costs & Surplus Process
+################################################################################
+
+# total_costs(0.1, 1, rlfs, 2020, perils, regions, sc4_em, sc4_pop, base_vals, property_dist, disp_prop)
+total_costs <- function(alpha, dparams, rlfs, year, perils, 
+                        regions, scenario, pop_forecast, a, p, d)
+{
+  
+  total <- 0 
+  
+  for (peril in 1:length(perils)){
+    for (region in 1:length(regions)){
+      
+      proactive_benefit <- p_costs(rlfs, year, perils[peril], regions[region], scenario, pop_forecast, a, p)
+      reactive_benefit <- r_costs(dparams, perils[peril], regions[region], year, scenario, pop_forecast, a, p, d)
+      
+      total <- total + alpha * proactive_benefit + (1 - alpha) * reactive_benefit
+      
+    }
+  }
+  return(as.numeric(total))
+  
+}
+
+surplus_process(0.2, dparams, years, perils, regions, sc4_em, sc4_pop, gdp_forecast[,"Sc4"], base_vals, property_dist, disp_prop, 0.05, 0.03)
+
+surplus_process <- function(alpha, dparams, years, perils, 
+                            regions, scenario, pop_forecast, gdp,
+                            a, p, d, v, u) 
+{
+  
+  # Produce rlfs based on the scenario being tested
+  rlfs <- construct_risk_loading_factors(years, perils, regions, 
+                                         dparams, scenario, pop_forecast, 
+                                         a, p, d, v, u) 
+  print(rlfs)
+  
+  # Construct surplus process
+  process <- rep(0, length(years))
+  gdp_coverage <- rep(0, length(years))
+  
+  i = 1
+  for (year in years) {
+    
+    costs <- total_costs(alpha, dparams, rlfs, year, perils, 
+                         regions, scenario, pop_forecast, a, p, d)
+    
+    process[i] <- costs * 1.321 # Adjust for exchange rate
+    
+    gdp_coverage[i] <- process[i]/gdp[i]
+    
+    i <- i + 1
+  }
+  
+  print(c("% Gdp used is: ", round(gdp_coverage, 4)))
+  
+  return(process/1000)
+  
+}
+  
