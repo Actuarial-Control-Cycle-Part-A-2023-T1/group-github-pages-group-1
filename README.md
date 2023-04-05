@@ -26,14 +26,14 @@ The catastrophic relief payment, unlike the above extras, vary between the proac
 
 In accordance with the control cycle, this program will be monitored by MAIVE Consulting monthly over the short-term period of the first year. This frequency will ensure that, as the program is introduced into practice, any initial inefficiencies can immediately be adjusted to improve program performance. The regularity of monitoring will then shift to a quarterly review over the next 2 years, before transitioning to biannually over the following 5 years, and finally annually thereafter for a period of 20 years. 
 
---------------------------------------------
+
 
 ## **Pricing** 😮
 We forecasted Storslysia's GDP and population and built our proposed program to identify costs associated utilising our [R Script](https://github.com/Actuarial-Control-Cycle-Part-A-2023-T1/group-github-pages-group-1/blob/main/R%20Script).
 
 This script also includes sensitivity analysis performed, and summary statistics to ensure the proposed program costs do not exceed 10% of Storslysia's GDP. 
 
------------------------------------------------
+
 
 ## **Results** 😎
 The total costs of our program from 2020 - 2100 in the worst case scenario is shown below. From our analysis, our proposed program costs will not exceed 10% of GDP.
@@ -47,7 +47,36 @@ With Program                   | Without Program
 :-----------------------------:|:-----------------------------:
 ![image](https://user-images.githubusercontent.com/113440610/229763855-fbf4e5ae-9f82-4626-9acd-d33850ac57f6.png)|![image](https://user-images.githubusercontent.com/113440610/229764395-98ef8259-a2e3-456e-8b3b-5b7e7af95167.png)
 
------------------------------------------------
+## **Assumptions**
+
+***Categorisation of 'Catastrophic' Weather Events***
+No existing definition of 'catastrophic' was provided. Accordingly, it was assumed using real world data that, on average, a natural disaster that causes over 5 deaths and/or 16 fatalities is 'catastrophic'.
+
+***Maximum Payout for Reactive Relocation***
+Property value was assumed to be a proxy for a citizen's net worth. The relevant payout was thus a floating percentage of this value. Those most socio-economically disadvantaged were assumed to be most in need of capital and thus received a lump sum almost equivalent to their property value. This sum decreased as one rose up in the property bracket. For the same reason, the percentage of contents recoverable decreased as wealth increased. Of course, where a citizen did suffer more, their payout would be the total damage caused.
+
+***Currency; Number of People per Household***
+The exchange rate was assumed to be 1.321. The number of individuals per household has been assumed to be 2.5 citizens.
+
+***Timing of events***
+Due to the need for otherwise heavy (and imprecise) interpolation, it is assumed that the claims only occur at the end of every 10 years and as such, the costs of claims will only be discounted at the end of every 10 years.
+
+***Property Value Distribution; Displacement Propensities of Perils***
+The distribution of property values has been assumed to stay the same. The displacement propensities of each peril have been assumed to be constant for the next hundred years. This is because it is futile to predict any change in the propensities as the rate of these extreme weather events are dependent on climate change – which, by definition, is inherently unexpected and unpredictable.
+
+***Percentage of Region Affected by a Catastrophic Event(s)***
+It has been assumed that the more fatal a particular type of natural disaster, the greater the proportion of a region that may likely be affected. No assumptions were made as to differentiate how each region may be affected because no information was given relating to each region’s geographical features.
+
+***GDP Growth***
+The investment returns on the remainder of the capital have been assumed to be included in the forecasted GDP.
+
+***Baseline Assumptions***
+The baseline inputs used for the model involved a 5% interest rate to discount the future claims cost to 2020 and a 3% inflation rate to inflate the cost. These assumptions were performed using data and projections from the SSP5 Scenario as this is the most extreme case that would overestimate costs.
+
+
+## **Risk and Risk Mitigation Strategies**
+<img width="442" alt="Screen Shot 2023-04-05 at 11 36 31 am" src="https://user-images.githubusercontent.com/113522147/229958810-2451ccc0-902d-49dd-9cf0-324f1bae9348.png">
+
 
 ![giphy](https://user-images.githubusercontent.com/113440610/229765593-73ada8b7-5573-423a-9239-31cf87defbf3.gif)
 
