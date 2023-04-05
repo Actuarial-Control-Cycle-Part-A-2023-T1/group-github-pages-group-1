@@ -86,7 +86,7 @@ For example, stress testing was performed on the inflation rate and shows that a
 Sensitivity analysis was also performed on the frequency of catastrophic events. The favourable situation of half the number of events reduces the claims cost by, on average 19%, whereas the unfavourable situation with a factor of 4x increases the claims cost by, on average 113%. This demonstrates that under this extremity, the program does lead to ruin in the decade commenced 2020 – highlighting the need for ongoing monitoring of the frequency assumptions relative to actual experience is required to ensure sufficient capital is injected into the scheme. It should be noted the 4x frequency multiplier is well covered by GDP growth as the scheme continues into the future.
 
 ### ***Risk Mitigation Strategies***
-### *Financial*
+#### *Financial*
 * Perform a valuation each year to ensure that costs associated with the adjusted benefits and the risk of a proactive or reactive relocation do not exceed 10% of Storslysia’s GDP and that there is adequate reserves to cover these payouts. At each valuation, adjust assumptions in the calculation of our costs to any economic or policy changes.
 
 ### *Operational*
