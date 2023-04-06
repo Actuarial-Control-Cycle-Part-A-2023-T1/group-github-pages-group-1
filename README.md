@@ -6,7 +6,7 @@
 
 ### University of New South Wales
 
-### Group 1
+### Group 1: MAIVE Consulting
 
 ### Team Members: Emily Zhou, Emily Khou, Emily Tan, Marcus Lautier, Ivana Tambun
 
